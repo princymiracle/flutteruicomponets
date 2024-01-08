@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
+import 'package:flutteruicomponets/homeScreen.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -15,11 +16,12 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, screenType) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-            title: 'Flutter Sizer Example',
-            theme: ThemeData(
-              primarySwatch: Colors.blue,
-            ),
-            home: Home());
+          title: 'Flutter Sizer Example',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: HomeScreen(),
+        );
       },
     );
   }
