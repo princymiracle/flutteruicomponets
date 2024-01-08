@@ -5,6 +5,8 @@ import 'package:flutteruicomponets/components/loginRegister/simpleloginpage.dart
 import 'package:flutteruicomponets/routes/route/routes.dart';
 import 'package:get/get.dart';
 
+import '../../components/loginRegister/loginlistscreen/loginRegisterListScreen.dart';
+
 class Screens{
 
   static final routes =[
@@ -12,5 +14,6 @@ class Screens{
     GetPage(name: Routes.animatedpage, page: () => AnimatedBackgroundPage()),
     GetPage(name: Routes.lightpage, page: () => Lightloginpage()),
     GetPage(name: Routes.simplepage, page: () => Simpleloginpage()),
+    GetPage(name: Routes.loginpage, page: () => LoginRegisterListScreen()),
   ];
 }

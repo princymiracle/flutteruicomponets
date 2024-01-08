@@ -4,9 +4,6 @@ import 'package:flutteruicomponets/routes/route/routes.dart';
 import 'package:flutteruicomponets/routes/route/screen.dart';
 import 'package:get/get.dart';
 
-
-
-
 void main() {
   runApp(const MyApp());
 }
@@ -24,7 +21,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          initialRoute: Routes.darkloginpage,
+          initialRoute: Routes.loginpage,
           getPages: Screens.routes,
         );
       },

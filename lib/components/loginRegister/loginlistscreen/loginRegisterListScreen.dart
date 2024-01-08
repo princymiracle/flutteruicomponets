@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutteruicomponets/routes/route/routes.dart';
 import 'package:get/get.dart';
 
-import '../darkloginpage.dart';
 List datas = [
   "Dark Login",
   "Animated Background Login",
@@ -21,26 +20,25 @@ class LoginRegisterListScreen extends StatelessWidget {
         shrinkWrap: true,
         itemBuilder: (context, index) {
           return InkWell(
-          onTap: () {
-            switch (index){
-              case 0:
-                Get.toNamed(Routes.darkloginpage);
-                break;
+              onTap: () {
+                switch (index) {
+                  case 0:
+                    Get.toNamed(Routes.darkloginpage);
+                    break;
 
-                case 1:
-                  Get.toNamed(Routes.animatedpage);
-                break;
+                  case 1:
+                    Get.toNamed(Routes.animatedpage);
+                    break;
 
-              case 2:
-                Get.toNamed(Routes.lightpage);
-                break;
-                
-              case 3:
-                Get.toNamed(Routes.simplepage);
-                break;
+                  case 2:
+                    Get.toNamed(Routes.lightpage);
+                    break;
 
-            }
-          },
+                  case 3:
+                    Get.toNamed(Routes.simplepage);
+                    break;
+                }
+              },
               child: Text(datas[index]));
         },
       ),
