@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'components/loginRegister/login1.dart';
-import 'components/loginRegister/loginRegisterListScreen.dart';
+import 'components/loginRegister/darkloginpage.dart';
+import 'components/loginRegister/loginlistscreen/loginRegisterListScreen.dart';
 
 List datas = [
   "Login Register",

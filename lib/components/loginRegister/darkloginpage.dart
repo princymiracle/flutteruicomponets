@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 Color Login1PrimaryColor = Colors.black;
 
-class Login1 extends StatelessWidget {
+class Darkloginpage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {

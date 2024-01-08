@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutteruicomponets/routes/route/routes.dart';
+import 'package:get/get.dart';
 
-import 'login1.dart';
+import '../darkloginpage.dart';
 List datas = [
-  "Login1",
-  "Login2",
+  "Dark Login",
+  "Animated Background Login",
+  "Light Login",
+  "Simple Login"
 ];
 
 class LoginRegisterListScreen extends StatelessWidget {
@@ -20,11 +24,19 @@ class LoginRegisterListScreen extends StatelessWidget {
           onTap: () {
             switch (index){
               case 0:
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Login1(),));
+                Get.toNamed(Routes.darkloginpage);
                 break;
 
-              case 1:
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Login1(),));
+                case 1:
+                  Get.toNamed(Routes.animatedpage);
+                break;
+
+              case 2:
+                Get.toNamed(Routes.lightpage);
+                break;
+                
+              case 3:
+                Get.toNamed(Routes.simplepage);
                 break;
 
             }
