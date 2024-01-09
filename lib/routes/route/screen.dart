@@ -14,6 +14,6 @@ class Screens{
     GetPage(name: Routes.animatedpage, page: () => AnimatedBackgroundPage()),
     GetPage(name: Routes.lightpage, page: () => Lightloginpage()),
     GetPage(name: Routes.simplepage, page: () => Simpleloginpage()),
-    GetPage(name: Routes.loginpage, page: () => LoginRegisterListScreen()),
+    GetPage(name: Routes.loginpage, page: () => LoginRegisterPage()),
   ];
 }

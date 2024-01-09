@@ -21,12 +21,12 @@ class HomeScreen extends StatelessWidget {
             onTap: () {
               switch (index){
                 case 0:
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => LoginRegisterListScreen(),));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => LoginRegisterPage(),));
                   break;
 
-                case 1:
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => LoginRegisterListScreen(),));
-                  break;
+                // case 1:
+                //   Navigator.push(context, MaterialPageRoute(build.er: (context) => LoginRegisterListScreen(),));
+                //   break;
 
               }
             },
