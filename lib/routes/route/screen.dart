@@ -10,7 +10,7 @@ import '../../components/loginRegister/loginlistscreen/loginRegisterListScreen.d
 class Screens{
 
   static final routes =[
-    GetPage(name: Routes.darkloginpage, page: () => Darkloginpage()),
+    GetPage(name: Routes.darkloginpage, page: () => DarkLoginPage()),
     GetPage(name: Routes.animatedpage, page: () => AnimatedBackgroundPage()),
     GetPage(name: Routes.lightpage, page: () => Lightloginpage()),
     GetPage(name: Routes.simplepage, page: () => Simpleloginpage()),

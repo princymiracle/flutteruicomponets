@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
 
-class AnimatedBackgroundPage extends StatelessWidget {
-  const AnimatedBackgroundPage({super.key});
+class AnimatedregisterPage extends StatelessWidget {
+  const AnimatedregisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController nameController = TextEditingController();
     TextEditingController emailController = TextEditingController();
     TextEditingController passController = TextEditingController();
+    TextEditingController confirmpassController = TextEditingController();
     return Scaffold(
       body: Stack(
         children: [
@@ -34,6 +36,16 @@ class AnimatedBackgroundPage extends StatelessWidget {
               Column(
                 children: [
                   CustomAnimatedTextFiled(
+                    controller: nameController,
+                    maxLines: 1,
+                    readOnly: true,
+                    hintStyle: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                    ),
+                    lebal: 'User Name',
+                  ),
+                  CustomAnimatedTextFiled(
                     controller: emailController,
                     maxLines: 1,
                     readOnly: true,
@@ -53,16 +65,27 @@ class AnimatedBackgroundPage extends StatelessWidget {
                     ),
                     lebal: 'Password',
                   ),
-                  CustomElevtedButton1(
-                    title: 'Sign In',
+                  CustomAnimatedTextFiled(
+                    controller: confirmpassController,
+                    maxLines: 1,
+                    readOnly: true,
+                    hintStyle: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                    ),
+                    lebal: 'Confirm Password',
                   ),
+                  CustomElevtedButton1(
+                    title: 'Sign Up',
+                  ),
+                  SizedBox(height: 24.h,),
                   RichText(
                     text: TextSpan(
-                        text: 'Dont have an account?',
+                        text: 'Already have an account?',
                         style: TextStyle(fontSize: 15.sp, color: Colors.white),
                         children: [
                           TextSpan(
-                            text: '  Sign Up',
+                            text: '  Sign in',
                             style: TextStyle(fontSize: 17.sp, color: Colors.white),
                           ),
                         ]),
