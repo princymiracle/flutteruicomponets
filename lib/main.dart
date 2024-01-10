@@ -4,6 +4,10 @@ import 'package:flutteruicomponets/routes/route/routes.dart';
 import 'package:flutteruicomponets/routes/route/screen.dart';
 import 'package:get/get.dart';
 
+import 'components/loginRegister/lightloginpage.dart';
+import 'components/register/registerScrren/animatedregisterpage.dart';
+import 'components/register/registerScrren/darkregisterpage.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -21,8 +25,9 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          initialRoute: Routes.loginpage,
-          getPages: Screens.routes,
+          home: Lightloginpage(),
+          // initialRoute: Routes.loginpage,
+          // getPages: Screens.routes,
         );
       },
     );

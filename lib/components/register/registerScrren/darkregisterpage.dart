@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
 
-class DarkLoginPage extends StatelessWidget {
+class DarkRegisterPage extends StatelessWidget {
+  TextEditingController usernameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
+  TextEditingController confirmpassController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +22,23 @@ class DarkLoginPage extends StatelessWidget {
             padding: const EdgeInsets.all(70),
             child: Center(
                 child: Image.asset(
-              "assets/images/img_proflie.png",
-              height: 15.h,
-            )),
+                  "assets/images/img_proflie.png",
+                  height: 15.h,
+                )),
           ),
           Column(
             children: [
+              CustomDarkLoginTextFiled(
+                controller: usernameController,
+                maxLines: 1,
+                hintext: "Enter UserName",
+                borderColor: Colors.grey,
+                prefixIcon: Icon(Icons.person, color: Colors.white),
+                readOnly: true,
+                hintStyle: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
               CustomDarkLoginTextFiled(
                 controller: emailController,
                 maxLines: 1,
@@ -48,21 +61,32 @@ class DarkLoginPage extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
+              CustomDarkLoginTextFiled(
+                controller: confirmpassController,
+                maxLines: 1,
+                hintext: "Confirm password",
+                borderColor: Colors.grey,
+                prefixIcon: Icon(Icons.lock_outline_sharp, color: Colors.white),
+                readOnly: true,
+                hintStyle: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
               CustomElevtedButton(
-                title: "Sign in",
+                title: "Sign up",
                 pressedColor: Colors.white30,
               ),
               RichText(
                   text: TextSpan(
-                text: 'Dont have an account?',
-                style: TextStyle(fontSize: 15.sp, color: Colors.white),
-                children: [
-                  TextSpan(
-                    text: '  Sign up',
-                    style: TextStyle(fontSize: 17.sp, color: Colors.white),
-                  ),
-                ],
-              )),
+                    text: 'Already have an account?',
+                    style: TextStyle(fontSize: 15.sp, color: Colors.white),
+                    children: [
+                      TextSpan(
+                        text: '  Sign in',
+                        style: TextStyle(fontSize: 17.sp, color: Colors.white),
+                      ),
+                    ],
+                  )),
             ],
           )
         ]),
