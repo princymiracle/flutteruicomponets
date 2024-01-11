@@ -36,7 +36,7 @@ class Lightloginpage extends StatelessWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(7),
-                          color: Color(0xff686A6C),
+                          color: Color(0xffE1D9D1),
                         ),
                         height: 40.h,
                         width: 50.h,
@@ -63,6 +63,20 @@ class Lightloginpage extends StatelessWidget {
                             fontSize: 15,
                           ),
                           lebal: 'Password',
+                        ),
+                        CustomElevtedButton2(
+                          title: 'Login',
+                        ),
+                        RichText(
+                          text: TextSpan(
+                              text: 'Not Register?',
+                              style: TextStyle(fontSize: 15.sp, color: Colors.white),
+                              children: [
+                                TextSpan(
+                                  text: ' Create account',
+                                  style: TextStyle(fontSize: 17.sp, color: Colors.cyan),
+                                ),
+                              ]),
                         ),
                       ],
                     ),
@@ -124,13 +138,63 @@ class CustomLightlTextFiled extends StatelessWidget {
           focusedBorder: border ??
               UnderlineInputBorder(
                 borderSide: BorderSide(
-                  color: Color(0xff68A6C),
+                  color: Colors.cyan,
+                  //color: Color(0xff68A6C),
                 ),
               ),
           label: Text(lebal,style: TextStyle(color: Colors.white),),
           hintStyle: hintStyle,
         ),
       ),
+    );
+  }
+}
+
+
+class CustomElevtedButton2 extends StatelessWidget {
+  String title;
+  double? fontSIze;
+  FontWeight? fontWeight;
+  double? radius;
+  Color? pressedColor;
+  Color? bgColor;
+  Function? onTap;
+  Color? fontColor;
+
+  CustomElevtedButton2({
+    required this.title,
+    this.fontSIze,
+    this.fontWeight,
+    this.radius,
+    this.pressedColor = const Color(0xffBDBCBA),
+    this.bgColor =  Colors.cyan,
+    this.onTap,
+    this.fontColor = Colors.white,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(40),
+      child: ElevatedButton(
+          onPressed: () => onTap!(),
+          style: ButtonStyle(
+            fixedSize: MaterialStateProperty.all(Size(50.w, 4.h)),
+            shape: MaterialStateProperty.all(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(radius ?? 15),
+              ),
+            ),
+            overlayColor: MaterialStateProperty.all(pressedColor),
+            backgroundColor: MaterialStateProperty.all(bgColor),
+          ),
+          child: Text(
+            title,
+            style: TextStyle(
+              fontSize: fontSIze ?? 17.sp,
+              color: fontColor,
+            ),
+          )),
     );
   }
 }
