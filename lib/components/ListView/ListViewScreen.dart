@@ -5,13 +5,15 @@ import 'package:flutteruicomponets/components/loginRegister/loginlistscreen/logi
 
 import 'package:get/get.dart';
 
-class LoginRegisterPage extends StatelessWidget {
-  List<ListViewModel> loginregister = [
-    ListViewModel(text: "Dark Login", screen: "/darkloginpage"),
-    ListViewModel(
-        text: "Animated Background Login", screen: "/animatedpage"),
-    ListViewModel(text: "Light Login", screen: "/lightpage"),
-    ListViewModel(text: "Simple Login", screen: "/simplepage"),
+class ListViewListPage extends StatelessWidget {
+  List<ListViewModel> listview = [
+    ListViewModel(text: "Simple List", screen: "/simplelistpage"),
+    ListViewModel(text: "Bouncy List", screen: "/bouncylistpage"),
+    ListViewModel(text: "Slidable List", screen: "/slidablelistpage"),
+    ListViewModel(text: "Swappable List", screen: "/swappablelistpage"),
+    ListViewModel(text: "Reorderable List", screen: "/reorderablelistpage"),
+    ListViewModel(text: "Expandable List", screen: "/expandablelistpage"),
+    ListViewModel(text: "Selection List", screen: "/selectionlistpage"),
   ];
 
   @override
@@ -19,18 +21,18 @@ class LoginRegisterPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           leading: Icon(Icons.arrow_back, color: Colors.white),
-          title: Text("Login ans Register Page",
+          title: Text("List",
               style: TextStyle(color: Colors.white)),
           backgroundColor: Color(0xff77BAC7),
         ),
         backgroundColor: Color(0xffE5E4E2),
         body: ListView.builder(
-          itemCount: loginregister.length,
+          itemCount: listview.length,
           shrinkWrap: true,
           itemBuilder: (context, index) {
             return InkWell(
               onTap: () {
-                Get.toNamed(loginregister[index].screen);
+                Get.toNamed(listview[index].screen);
               },
               child: Padding(
                 padding: const EdgeInsets.all(15.0),
@@ -46,7 +48,7 @@ class LoginRegisterPage extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        loginregister[index].text,
+                        listview[index].text,
                         style: TextStyle(
                           color: Color(0xff4545FF),
                         ),
@@ -56,29 +58,8 @@ class LoginRegisterPage extends StatelessWidget {
                 ),
               ),
             );
-            /*return InkWell(
-              onTap: () {
-                switch (index) {
-                  case 0:
-                    Get.toNamed(Routes.darkloginpage);
-                    break;
-
-                  case 1:
-                    Get.toNamed(Routes.animatedpage);
-                    break;
-
-                  case 2:
-                    Get.toNamed(Routes.lightpage);
-                    break;
-
-                  case 3:
-                    Get.toNamed(Routes.simplepage);
-                    break;
-                }
-              },
-              child: Text(datas[index]));*/
           },
         )
-        );
+    );
   }
 }

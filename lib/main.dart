@@ -29,9 +29,12 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
           ),
          // home: Simpleregisterpage(),
-          initialRoute: Routes.loginpage,
-          getPages: Screens.routes,
+          //initialRoute: Routes.loginpage,
+         // getPages: Screens.routes,
+          initialRoute: Routes1.listpage,
+          getPages: Screens1.routes1,
         );
+
       },
     );
   }
