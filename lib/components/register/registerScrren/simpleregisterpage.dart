@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
 
-class Simpleloginpage extends StatelessWidget {
+class Simpleregisterpage extends StatelessWidget {
+  TextEditingController usernameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
 
@@ -23,7 +24,7 @@ class Simpleloginpage extends StatelessWidget {
                   children: [
                     Align(
                       alignment: Alignment.center,
-                      child: Text("LOGIN",style: TextStyle(color: Colors.teal,fontSize: 30.sp),),
+                      child: Text("REGISTER",style: TextStyle(color: Colors.teal,fontSize: 30.sp),),
                     ),
                   ],
                 ),
@@ -33,6 +34,14 @@ class Simpleloginpage extends StatelessWidget {
               ),
               Column(
                 children: [
+                  CustomSimpleLoginTextFiled(
+                    controller: usernameController,
+                    maxLines: 1,
+                    borderColor: Colors.grey,
+                    prefixIcon: Icon(Icons.person, color: Colors.cyan),
+                    readOnly: true,
+                    lebal: 'Enter UserName',
+                  ),
                   CustomSimpleLoginTextFiled(
                     controller: emailController,
                     maxLines: 1,
@@ -49,24 +58,16 @@ class Simpleloginpage extends StatelessWidget {
                     readOnly: true,
                     lebal: 'Password',
                   ),
-                  SizedBox(height: 7.h,),
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text("Forgot Password ?",style: TextStyle(color: Colors.cyan,fontSize: 15.sp),),
-                    ),
-                  ),
                   CustomElevtedButton3(
-                    title: 'LOGIN',
+                    title: 'REGISTER',
                   ),
                   RichText(
                     text: TextSpan(
-                        text: 'Not Register?',
+                        text: 'Already Register?',
                         style: TextStyle(fontSize: 15.sp, color: Colors.grey),
                         children: [
                           TextSpan(
-                            text: ' Create account',
+                            text: ' Log in',
                             style: TextStyle(fontSize: 17.sp, color: Colors.blue),
                           ),
                         ]),
@@ -164,7 +165,7 @@ class CustomElevtedButton3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(40),
+      padding: const EdgeInsets.all(10),
       child: ElevatedButton(
           onPressed: () => onTap!(),
           style: ButtonStyle(
